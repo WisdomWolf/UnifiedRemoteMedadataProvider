@@ -85,7 +85,6 @@ public class MetadataUpdaterCallback implements Handler.Callback {
 			if (mGenerationId == msg.arg1) {
 				if (mMetadataProvider.getOnRemoteControlFlagsChangeListener() != null) {
 					int flags = msg.arg2;
-					if (Build.VERSION.SDK_INT < 17) 
 					mFeatureList.clear();
 					if ((flags | RemoteControlClient.FLAG_KEY_MEDIA_FAST_FORWARD) == flags) mFeatureList.add(RemoteControlFeature.USES_FAST_FORWARD);
 					if ((flags | RemoteControlClient.FLAG_KEY_MEDIA_NEXT) == flags) mFeatureList.add(RemoteControlFeature.USES_NEXT);
